@@ -1,0 +1,18 @@
+.header-section{
+    background-color: darkgray;
+    padding: 15px;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+.my-link-el{
+    text-decoration: none;
+}
+.nav-element{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
