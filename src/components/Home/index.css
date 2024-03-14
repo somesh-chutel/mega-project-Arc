@@ -1,5 +1,16 @@
-.unorderd-list{
+
+.home-cont{
+    height: 91vh;
+    width: 100%;
+    background-image: url("https://assets.ccbp.in/frontend/react-js/home-lg-bg.png");
+    background-size: cover;
+    padding: 30px;
     display: flex;
-    justify-content: space-around;
-    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-content-cont{
+    width: 40%;
+    height: 40%;
+    color: white;
 }

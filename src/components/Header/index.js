@@ -7,16 +7,22 @@ const Header =()=>{
             <ul className="nav-list">
 
                 <Link to="/" className="my-link-el">
+                <li className="nav-element">
+                    <img className="header-img-logo" src="https://assets.ccbp.in/frontend/react-js/logo-img.png"/>
+                </li>
+                </Link>
+
+                <div className="home-jobs-cont">
+                <Link to="/" className="my-link-el">
                 <li className="nav-element">Home</li>
                 </Link>
 
-                <Link to="/about" className="my-link-el">
-                <li className="nav-element">About</li>
+                <Link to="/jobs" className="my-link-el">
+                <li className="nav-element">Jobs</li>
                 </Link>
+                </div>
 
-                <Link to="/services" className="my-link-el">
-                <li className="nav-element">Services</li>
-                </Link>
+                <button className="btn btn-info" type="button">Logout</button>
 
             </ul>
         </div>

@@ -1,8 +1,11 @@
-import { wait } from "@testing-library/user-event/dist/utils";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import "./index.css";
-import { useState } from "react";
+
 
 const Login = () => {
+  const navigate = useNavigate();
 
   const [allValues,setValue] = useState({
     username:"",
@@ -33,6 +36,8 @@ const Login = () => {
         console.log(data);
         if(response.ok===true){
           setValue({...allValues,showErrorMsg:false});
+          Cookies.set("token",data.jwt_token);
+          navigate("/");
         }
         else{
           setValue({...allValues,showErrorMsg:true,errorMsg:data.error_msg});
@@ -46,8 +51,12 @@ const Login = () => {
     const onChangeUserPassword = (event)=>{
         setValue({...allValues,password:event.target.value});
     }
-
-
+    const jwtToken = Cookies.get("token");
+    useEffect(()=>{
+      if(jwtToken!==undefined){
+        navigate("/");
+      }
+    })
   return (
     <div className="login-page-cont">
       <form className="my-form-cont" onSubmit={onSubmitUserDetails}>
