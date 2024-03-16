@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.all-jobs-sec{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    background-color: black;
+}
+.filter-sec{
+    width: 30%;
+    height: 100vh;
+}
+.jobs-list-cont{
+    width: 70%;
+    padding: 10px;
+}
+.icon-title-cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+.jobs-logo{
+    width: 60px;
+}
+.title-rating-cont{
+    margin-left: 10px;
+}
+#rating-icon{
+    color: yellow !important;
+    margin-right: 10px;
+}
+.location-lpa-cont{
+    display: flex;
+    justify-content: space-between;
+}
+.location{
+    margin-right: 20px;
+    margin-left: 5px;
+}
+h4,span{
+    color: white;
+}
+.icons{
+    color: white;
+}
+h4{
+    font-size: 18px;
+}
+hr{
+    color: white;
+}
+p,h4{
+    color: white;
+}

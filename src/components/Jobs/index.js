@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../Header';
+import DisplayJobs from '../DisplayJobs';
 import './index.css';
 
 
 const Jobs = ()=>{
+    const [allValues,setvalue] = useState({
+        jobsList:[]
+    });
 
     useEffect(()=>{
         const displayAllJobs = async()=>{
@@ -17,12 +21,15 @@ const Jobs = ()=>{
     
               const response = await fetch(url,options);
               const data = await response.json();
+              if(response.ok===true){
+                setvalue({...allValues,jobsList:data.jobs})
+              }
               console.log(data.jobs);
         }
 
         displayAllJobs();
 
-    })
+    },[])
 
     
 
@@ -30,6 +37,18 @@ const Jobs = ()=>{
 
         <>
             <Header/>
+            <div className='all-jobs-sec'>
+            <div className='filter-sec'>
+
+            </div>
+            <div className='jobs-list-cont'>
+                <ul>
+                    {allValues.jobsList.map(each=> 
+                            <DisplayJobs jobsData={each} key={each.id}/>
+                        )}
+                </ul>
+            </div>
+            </div>
         </>
     )
 }

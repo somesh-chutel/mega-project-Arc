@@ -1,7 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .home-cont{
-    height: 91vh;
     width: 100%;
+    min-height: 100vh;
     background-image: url("https://assets.ccbp.in/frontend/react-js/home-lg-bg.png");
     background-size: cover;
     padding: 30px;
