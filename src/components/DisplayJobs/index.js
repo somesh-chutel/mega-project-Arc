@@ -9,7 +9,6 @@ const DisplayJobs = (props)=>{
     const {jobsData} = props;
 
     return(
-
         <li className='jobs-card-cont'>
             <div className='icon-title-cont'>
                 <img className='jobs-logo' src={jobsData.company_logo_url}/>

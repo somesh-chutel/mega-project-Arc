@@ -22,7 +22,7 @@ const Header =()=>{
                 </Link>
                 </div>
 
-                <button className="btn btn-info" type="button">Logout</button>
+                <button className="btn btn-info btn-sm mt-2" type="button">Logout</button>
 
             </ul>
         </div>
