@@ -70,12 +70,15 @@ const FiltersGroup = (props) => {
 
   },[])
 
+ 
+
   const renderEmploymentTypesList = () => {
 
     const onChangeEmpType = (event)=>{
 
-      onChangeEmploymentType(event.target.value);  
+      const isChecked = event.target.checked;
 
+      onChangeEmploymentType(event.target.value,isChecked);
     }
     
     return employmentTypesList.map(eachType => {

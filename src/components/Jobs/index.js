@@ -39,13 +39,22 @@ const Jobs = () => {
 
   const onChangeSearchInput = (event)=>{
 
-    setvalue({...allValues,searchinput:event.target.value});
+    if(event.key==="Enter"){
+      setvalue({...allValues,searchinput:event.target.value});
+    }
 
   }
 
-  const onChangeEmployType = (value)=>{
+  const onChangeEmployType =(value,isChecked)=>{
 
-    setvalue({...allValues,employType:value});
+    if(isChecked===true){
+        setvalue({...allValues,employType:[...allValues.employType,value]});
+    }
+    else{
+      setvalue({...allValues,employType:allValues.employType.filter(each=>each!==value)});
+    }
+
+      
 
   }
 
@@ -57,13 +66,12 @@ const Jobs = () => {
           <FiltersGroup onChangeEmploymentType={onChangeEmployType}/>
         </div>
         <div className="jobs-list-cont d-flex flex-column align-items-center">
-        <form>
         <div className="search-bar">
         <input
           className="search-input"
           type="search"
           placeholder="Search"
-          onChange={onChangeSearchInput}
+          onKeyDown={onChangeSearchInput}
         />
         <button
           className="search-button"
@@ -72,7 +80,6 @@ const Jobs = () => {
           <BsSearch className="search-icon" />
         </button>
       </div>
-      </form>
           <ul>
             {allValues.jobsList.map((each) => (
               <DisplayJobs jobsData={each} key={each.id} />
